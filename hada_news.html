@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <script src="/vendor/markdown-it.min.js"></script>
+        <link rel="stylesheet" href="/vendor/highlight-default.min.css">
+        <script src="/vendor/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
+                <!-- Global site tag (gtag.js) - Google Analytics v4 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCD87E7SF0"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MCD87E7SF0');
+        </script>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <title>GeekNews - 개발/기술/스타트업 뉴스 서비스</title>
+        <meta name="description" content="개발 뉴스, 기술 관련 새소식, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트. 이메일 뉴스레터/X(Twitter)/슬랙 봇으로 구독 가능">
+
+        <meta property="og:url" content="https://news.hada.io/" />
+        <meta property="og:title" content="GeekNews - 개발/기술/스타트업 뉴스 서비스" />
+            <meta property="og:image" content="https://social.news.hada.io/index" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="robots" content="max-image-preview:large">
+            <meta property="og:locale" content="ko_KR" />
+        <meta property="og:site_name" content="GeekNews" />
+        <meta property="og:description" content="개발 뉴스, 기술 관련 새소식, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트. 이메일 뉴스레터/X(Twitter)/슬랙 봇으로 구독 가능" />
+        <meta property='fb:app_id' content="2417316805247011" />
+
+            <meta name="twitter:image" content="https://social.news.hada.io/index" />
+            <meta name="twitter:title" content="GeekNews - 개발/기술/스타트업 뉴스 서비스" />
+        <meta name="twitter:creator" content="@GeekNewsHada" />
+        <meta name="twitter:site" content="@GeekNewsHada" />
+        <meta name="twitter:description" content="개발 뉴스, 기술 관련 새소식, 스타트업 정보와 노하우, 세상의 재미난 것들을 좋아하는 사람들을 위한 뉴스 사이트. 이메일 뉴스레터/X(Twitter)/슬랙 봇으로 구독 가능" />
+
+            <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://news.hada.io/",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://news.hada.io/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}</script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "https://news.hada.io/",
+    "logo": "https://news.hada.io/logo.png"
+}</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/vendor/hotkeys.min.js"></script>
+
+        <link rel="stylesheet" href="/assets/main.css?20250605"  type="text/css" />
+        <link rel="manifest" href="/manifest.json?20240404a">
+        <meta name="theme-color" content="#000065">
+        <meta name="google-site-verification" content="xfNJ7NBfDxPJBTNxTxSIQ7UVPA5zwPKBCC6STmWrQYE" />
+        <script src="/assets/main.js?20230914" type="text/javascript"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR" >
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap" rel="stylesheet">
+        <link rel="webmention" href="https://webmention.io/news.hada.io/webmention" />
+        <link rel="pingback" href="https://webmention.io/news.hada.io/xmlrpc" />
+
+		<meta name="keywords" content="GeekNews, 긱뉴스, News, 기술뉴스, Geek, 긱, GN, IT 뉴스, 기술 트렌드, 개발, 스타트업 정보, 개발자, 해커, Developer, Hacker, Programmer, Entrepreneur">
+		<link rel="alternate" type="application/atom+xml" title="GeekNews Feed" href="https://news.hada.io/rss/news" />
+		<script type="text/javascript">
+		function getUrlParameter(name) {
+			name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+			var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+			var results = regex.exec(location.search);
+			return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+		};
+        hotkeys('J,K', function (event, handler){
+			const limit = 20;
+			var activeId = document.activeElement.id;
+
+			var activePage = getUrlParameter("page");
+			if (activePage) {
+				page = parseInt(activePage);
+			} else {
+				page = 1;
+			}
+
+			if (activeId && activeId.startsWith('tr')) {
+				focusId = parseInt(activeId.substr(2));
+				switch (handler.key) {
+					case 'K':
+						if (focusId-- > (page-1) * limit + 1) {
+							byId("tr" + focusId).focus();
+						} else {
+							if (page-- > 1) {
+								window.location.href = "/?page=" + page;
+							}
+						}
+					break;
+					case 'J':
+						if (focusId++ < page * limit) {
+							try {
+                                byId("tr" + focusId).focus();
+                            } catch (e) {
+								console.log('앗.. 여기까지인 것 같습니다. 🤔');
+							}
+						} else {
+							window.location.href = "/?page=" + (page + 1);
+						}
+					break;
+				}
+			} else {
+				byId('tr' + ((page-1) * limit + 1)).focus();
+			}
+        });
+        </script>
+	</head>
+	<body>
+        <header>
+            <nav>
+                <div class=ltd><span class=geeknews><a href="/" class=selected >GeekNews</a></span>
+                    <a href='/new' >최신글</a> <a href='/comments' >댓글</a> <a href='/past' >예전글</a> <a href='/ask' >Ask</a> <a href='/show' >Show</a> <a href='/plus' >GN⁺</a> <a href='/weekly' >Weekly</a>  | <a href='/write' >글등록</a>                     <span class=curnavitem>
+                    </span>
+                </div>
+                <div class=rtd>
+                    <form class="search-cse" action="search" method="GET">
+                        <input id="q" name="q" type="search" maxlength=20 class="input" placeholder="검색">
+                    </form>
+                    <a href='/login' >로그인</a>                </div>
+			</nav>
+        </header>		<main>
+			<article>
+			<div class="topics">
+<div class='topic_row'><div class=votenum>1</div><div class=vote><span id='vote22379'><a class=upvote href='javascript:vote(22379, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://every.to/p/i-found-12-people-who-ditched-their-expensive-software-for-ai-built-tools' rel='nofollow' id='tr1'><h1>AI로 직접 만든 툴로 고가 소프트웨어를 대체한 사람들의 이야기</h1></a> <span class=topicurl>(every.to)</span></div><div class='topicdesc'><a href='topic?id=22379' class='c99 breakall'>- AI 프롬프트만으로 내부용 맞춤 툴을 만들어 수십~수천만원 상당의 상용 소프트웨어 비용을 아끼고 있음
+- 비개발자도 코드 한 줄 작성 없이 ...</a></div><div class='topicinfo'><span id='tp22379'>16</span> points by <a href='/user?id=neo'>neo</a> 7시간전<span id='unvote22379'></span> | <a href='topic?id=22379&go=comments' class=u>댓글과 토론</a></div></div><div class='topic_row'><div class=votenum>2</div><div class=vote><span id='vote22374'><a class=upvote href='javascript:vote(22374, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://github.com/KittenML/KittenTTS' rel='nofollow' id='tr2'><h1>Kitten TTS - CPU만으로 동작하는 25MB 오픈소스 TTS 모델</h1></a> <span class=topicurl>(github.com/KittenML)</span></div><div class='topicdesc'><a href='topic?id=22374' class='c99 breakall'>- Kitten TTS는 경량화와 고음질을 동시에 추구하는 오픈소스 TTS(텍스트-투-스피치) 모델
+- 1,500만 개 파라미터만 사용하여 모델 크기가 25MB...</a></div><div class='topicinfo'><span id='tp22374'>12</span> points by <a href='/user?id=neo'>GN⁺</a> 7시간전<span id='unvote22374'></span> | <a href='topic?id=22374&go=comments' class=u>댓글 2개</a></div></div><div class='topic_row'><div class=votenum>3</div><div class=vote><span id='vote22375'><a class=upvote href='javascript:vote(22375, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://blog.puzzmo.com/posts/2025/07/30/six-weeks-of-claude-code/' rel='nofollow' id='tr3'><h1>Claude Code 6주 사용기</h1></a> <span class=topicurl>(blog.puzzmo.com)</span></div><div class='topicdesc'><a href='topic?id=22375' class='c99 breakall'>- Claude Code 도입 이후, 대규모 코드 작성과 유지보수의 방식이 크게 변화—“코딩계의 사진술 도입기”에 비유될 만큼, 빠른 구현과 자유로운 표현...</a></div><div class='topicinfo'><span id='tp22375'>10</span> points by <a href='/user?id=neo'>GN⁺</a> 7시간전<span id='unvote22375'></span> | <a href='topic?id=22375&go=comments' class=u>댓글 6개</a></div></div><div class='topic_row'><div class=votenum>4</div><div class=vote><span id='vote22373'><a class=upvote href='javascript:vote(22373, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://blog.langchain.com/deep-agents/' rel='nofollow' id='tr4'><h1>LangChain의 DeepAgents 프레임워크 </h1></a> <span class=topicurl>(blog.langchain.com)</span></div><div class='topicdesc'><a href='topic?id=22373' class='c99 breakall'>- 기존 LLM 기반 에이전트는 단순히 툴을 반복 호출하는 '얕은(shallow) 에이전트' 구조가 일반적이나, Deep Agents는 복잡하고 장기적인 과업도 ...</a></div><div class='topicinfo'><span id='tp22373'>9</span> points by <a href='/user?id=neo'>GN⁺</a> 7시간전<span id='unvote22373'></span> | <a href='topic?id=22373&go=comments' class=u>댓글 1개</a></div></div><div class='topic_row'><div class=votenum>5</div><div class=vote><span id='vote22383'><a class=upvote href='javascript:vote(22383, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://open-web-advocacy.org/blog/japan-apple-must-lift-engine-ban-by-december/' rel='nofollow' id='tr5'><h1>일본: Apple, 12월까지 브라우저 엔진 금지 해제해야 함</h1></a> <span class=topicurl>(open-web-advocacy.org)</span></div><div class='topicdesc'><a href='topic?id=22383' class='c99 breakall'>- 일본 정부가 최근 스마트폰법을 통과시켜 Apple의 iOS에서 타사 브라우저 엔진 금지를 직접적으로 금지함
+- 그동안 WebKit 엔진 강제로 인해 iOS...</a></div><div class='topicinfo'><sp_row'><div class=votenum>6</div><div class=vote><span id='vote22360'><a class=upvote href='javascript:vote(22360, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://github.com/VSRemoter/LuxPDF' rel='nofollow' id='tr6'><h1>LuxPDF - PDF 변환/분할/합치기 등의 기능을 가진 무료 오픈소스 도구</h1></a> <span class=topicurl>(github.com/VSRemoter)</span></div><div class='topicdesc'><a href='topic?id=22360' class='c99 breakall'>- ILovePDF, Small PDF 등 상용 PDF 웹앱을 대체하는, 완전 무료·오픈소스·프라이버시 중심 PDF 툴
+- 100% 클라이언트 사이드로 모든 파일 처리...</a></div><div class='topicinfo'><span id='tp22360'>25</span> points by <a href='/user?id=xguru'>xguru</a> 1일전<span id='unvote22360'></span> | <a href='topic?id=22360&go=comments' class=u>댓글 3개</a></div></div><div class='topic_row'><div class=votenum>7</div><div class=vote><span id='vote22359'><a class=upvote href='javascript:vote(22359, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://openai.com/index/introducing-gpt-oss' rel='nofollow' id='tr7'><h1>OpenAI, 6년만의 오픈소스 LLM, GPT-OSS 공개</h1></a> <span class=topicurl>(openai.com)</span></div><div class='topicdesc'><a href='topic?id=22359' class='c99 breakall'>OpenAI가 GPT-OSS 모델 시리즈(gpt-oss-120b / gpt-oss-20b)를 Apache 2.0 라이선스로 전격 공개했습니다. GPT-2 이후 6년 만에 선보이는 오픈 가...</a></div><div class='topicinfo'><span id='tp22359'>29</span> points by <a href='/user?id=haebom'>haebom</a> 1일전<span id='unvote22359'></span> | <a href='topic?id=22359&go=comments' class=u>댓글 8개</a></div></div><div class='topic_row'><div class=votenum>8</div><div class=vote><span id='vote22371'><a class=upvote href='javascript:vote(22371, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://ghost.org/changelog/6/' rel='nofollow' id='tr8'><h1>Ghost 6.0 릴리즈</h1></a> <span class=topicurl>(ghost.org)</span></div><div class='topicdesc'><a href='topic?id=22371' class='c99 breakall'>- 오픈 방식의 소셜 네트워크 통합
+  - Bluesky, Mastodon, Threads, Flipboard, WordPress 등과 연결되어, 외부 소셜 플랫폼 이용자가 Ghost ...</a></div><div class='topicinfo'><span id='tp22371'>4</span> points by <a href='/user?id=xguru'>xguru</a> 7시간전<span id='unvote22371'></span> | <a href='topic?id=22371&go=comments' class=u>댓글 3개</a></div></div><div class='topic_row'><div class=votenum>9</div><div class=vote><span id='vote22380'><a class=upvote href='javascript:vote(22380, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://ollama.com/turbo' rel='nofollow' id='tr9'><h1>Ollama Turbo</h1></a> <span class=topicurl>(ollama.com)</span></div><div class='topicdesc'><a href='topic?id=22380' class='c99 breakall'>- Ollama Turbo는 대규모 오픈 모델을 고성능 데이터센터 하드웨어에서 빠르게 실행할 수 있는 새로운 솔루션 (월 $20)
+- Ollama의 앱, CLI, AP...</a></div><div class='topicinfo'><span id='tp22380'>3</span> points by <a href='/user?id=neo'>GN⁺</a> 7시간전<span id='unvote22380'></span> | <a href='topic?id=22380&go=comments' class=u>댓글 1개</a></div></div><div class='topic_row'><div class=votenum>10</div><div class=vote><span id='vote22378'><a class=upvote href='javascript:vote(22378, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://www.neowin.net/news/microsoft-is-taking-steps-to-open-sourcing-windows-11-user-interface-framework/' rel='nofollow' id='tr10'><h1>Microsoft, Windows 11의 UI 프레임워크인 WinUI를 오픈소스로 전환 작업중</h1></a> <span class=topicurl>(neowin.net)</span></div><div class='topicdesc'><a href='topic?id=22378' class='c99 breakall'>- Microsoft가 Windows 11의 사용자 인터페이스 프레임워크인 WinUI의 오픈소스화를 위해 단계적 계획을 발표함
+- WinUI는 복잡한 구조와 많은 ...</a></div><div class='topicinfo'><span id='tp22378'>3</span> points by <a href='/user?id=neo'>GN⁺</a> 7시간전<span id='unvote22378'></span> | <a href='topic?id=22378&go=comments' class=u>댓글 1개</a></div></div><div class='topic_row'><div class=votenum>11</div><div class=vote><span id='vote22364'><a class=upvote href='javascript:vote(22364, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://colton.dev/blog/curing-your-ai-10x-engineer-imposter-syndrome/' rel='nofollow' id='tr11'><h1>AI 10배 생산성 엔지니어 신드롬에서 벗어나는데 도움이 된 것들</h1></a> <span class=topicurl>(colton.dev)</span></div><div class='topicdesc'><a href='topic?id=22364' class='c99 breakall'>- AI가 엔지니어의 생산성을 10~100배 높인다는 주장은 현실적이지 않음
+- 실제 AI 코딩 도구를 깊이 사용해보면 효율성 향상은 제한적이며, 반...</a></div><div class='topicinfo'><span id='tp22364'>14</span> points by <a href='/user?id=neo'>GN⁺</a> 1일전<span id='unvote22364'></span> | <a href='topic?id=22364&go=comments' class=u>댓글 10개</a></div></div><div class='topic_row'><div class=votenum>12</div><div class=vote><span id='vote22384'><a class=upvote href='javascript:vote(22384, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='topic?id=22384' rel='nofollow' id='tr12'><h1>Show GN: 캐럿 2.0: 더욱 정확한 대화 내용 기록, 모바일 앱</h1></a> <span class=topicurl>(caret.so)</span></div><div class='topicdesc'><a href='topic?id=22384' class='c99 breakall'>똑똑한 AI 미팅노트 캐럿이 2.0으로 업데이트되었어요!
+
+### 모바일 앱
+많은 분들이 요청하셨던 모바일 앱을 출시했어요. 탭 한 번으로 ...</a></div><div class='topicinfo'><span id='tp22384'>2</span> points by <a href='/user?id=hiddenest'>hiddenest</a> 6시간전<span id='unvote22384'></span> | <a href='topic?id=22384&go=comments' class=u>댓글과 토론</a></div></div><div class='topic_row'><div class=votenum>13</div><div class=vote><span id='vote22362'><a class=upvote href='javascript:vote(22362, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/' rel='nofollow' id='tr13'><h1>구글 딥마인드, Genie 3 월드 모델 공개 </h1></a> <span class=topicurl>(deepmind.google)</span></div><div class='topicdesc'><a href='topic?id=22362' class='c99 breakall'>- 텍스트 프롬프트만으로 실시간 인터랙티브 3D 환경을 생성하는 최초의 범용 월드 모델
+- 24fps, 720p 해상도, 수 분간 일관성 유지가 가능하...</a></div><div class='topicinfo'><span id='tp22362'>13</span> points by <a href='/user?id=neo'>GN⁺</a> 1일전<span id='unvote22362'></span> | <a href='topic?id=22362&go=comments' class=u>댓글 1개</a></div></div><div class='topic_row'><div class=votenum>14</div><div class=vote><span id='vote22369'><a class=upvote href='javascript:vote(22369, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://blogbyash.com/translation/trying-to-impress-people-not-respect/' rel='nofollow' id='tr14'><h1>커리어가 성장한다는 건, 때로 존경하지 않는 사람들을 감동시켜야 한다는 것 [번역글]</h1></a> <span class=topicurl>(blogbyash.com)</span></div><div class='topicdesc'><a href='topic?id=22369' class='c99 breakall'># 1. 커리어 성장과 인정의 상대(對象) 변화
+   - 개발자 커리어 초반에는 실력 있는 시니어/스태프 엔지니어(“마치 마법사 같았다”)에게 인정...</a></div><div class='topicinfo'><span id='tp22369'>6</span> points by <a href='/user?id=ashbyash'>ashbyash</a> 17시간전<span id='unvote22369'></span> | <a href='topic?id=22369&go=comments' class=u>댓글과 토론</a></div></div><div class='topic_row'><div class=votenum>15</div><div class=vote><span id='vote22338'><a class=upvote href='javascript:vote(22338, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://grantslatton.com/how-to-design-document' rel='nofollow' id='tr15'><h1>좋은 설계 문서 작성법</h1></a> <span class=topicurl>(grantslatton.com)</span></div><div class='topicdesc'><a href='topic?id=22338' class='c99 breakall'>- 설계 문서는 시스템의 구현 전략과 제한사항, 트레이드오프를 정리한 기술 보고서임
+- 설계 문서는 독자가 해당 설계가 상황에 적합하다는 점을 ...</a></div><div class='topicinfo'><span id='tp22338'>42</span> points by <a href='/user?id=neo'>GN⁺</a> 3일전<span id='unvote22338'></span> | <a href='topic?id=22338&go=comments' class=u>댓글 1개</a></div></div><div class='topic_row'><div class=votenum>16</div><div class=vote><span id='vote22367'><a class=upvote href='javascript:vote(22367, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://thephp.foundation/blog/2025/07/11/php-85-adds-pipe-operator/' rel='nofollow' id='tr16'><h1>PHP 8.5 파이프 연산자(|&gt;) 도입</h1></a> <span class=topicurl>(thephp.foundation)</span></div><div class='topicdesc'><a href='topic?id=22367' class='c99 breakall'>- PHP 8.5에 파이프 연산자(|&gt;) 가 공식 추가되어, 함수형 프로그래밍 스타일의 체이닝이 가능해짐
+- 파이프 연산자는 왼쪽 값을 오른쪽 함수(c...</a></div><div class='topicinfo'><span id='tp22367'>9</span> points by <a href='/user?id=neo'>GN⁺</a> 1일전<span id='unvote22367'></span> | <a href='topic?id=22367&go=comments' class=u>댓글 5개</a></div></div><div class='topic_row'><div class=votenum>17</div><div class=vote><span id='vote22342'><a class=upvote href='javascript:vote(22342, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://github.com/cactus-compute/cactus' rel='nofollow' id='tr17'><h1>Cactus - 스마트폰을 위한 Ollama</h1></a> <span class=topicurl>(github.com/cactus-compute)</span></div><div class='topicdesc'><a href='topic?id=22342' class='c99 breakall'>- 다양한 디바이스(스마트폰, 노트북, TV, 카메라 등)에서 GGUF 모델을 직접 실행할 수 있게 해주는 크로스플랫폼 프레임워크
+  - Huggingface;...</a></div><div class='topicinfo'><span id='tp22342'>22</span> points by <a href='/user?id=xguru'>xguru</a> 2일전<span id='unvote22342'></span> | <a href='topic?id=22342&go=comments' class=u>댓글 2개</a></div></div><div class='topic_row'><div class=votenum>18</div><div class=vote><span id='vote22368'><a class=upvote href='javascript:vote(22368, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://haebom.dev/qrx6zk25rn9grmv314y5' rel='nofollow' id='tr18'><h1>Cloudflare vs Perplexity 논쟁. 하지만 웹 사용자 모두가 알아야 하는.</h1></a> <span class=topicurl>(haebom.dev)</span></div><div class='topicdesc'><a href='topic?id=22368' class='c99 breakall'>## 🚨 사건 개요
+2025년 8월 4일, Cloudflare가 AI 검색엔진 Perplexity를 &quot;웹 표준 위반자&quot;로 공개 비판
+
+## ⚔️ 양측 주장
+
+### Cl...</a></div><div class='topicinfo'><span id='tp22368'>5</span> points by <a href='/user?id=haebom'>haebom</a> 21시간전<span id='unvote22368'></span> | <a href='topic?id=22368&go=comments' class=u>댓글과 토론</a></div></div><div class='topic_row'><div class=votenum>19</div><div class=vote><span id='vote22341'><a class=upvote href='javascript:vote(22341, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://blogbyash.com/translation/vibe-coding-needs-context-engineering/' rel='nofollow' id='tr19'><h1>바이브 코딩을 위한 컨텍스트 엔지니어링의 4가지 핵심축 [번역글]</h1></a> <span class=topicurl>(blogbyash.com)</span></div><div class='topicdesc'><a href='topic?id=22341' class='c99 breakall'>바이브 코딩에는 컨텍스트 엔지니어링이 필요하다
+
+## 1. 바이브 코딩(Vibe Coding)이란?
+- AI가 자연어 프롬프트만으로 실제 작동 코드...</a></div><div class='topicinfo'><span id='tp22341'>26</span> points by <a href='/user?id=ashbyash'>ashbyash</a> 3일전<span id='unvote22341'></span> | <a href='topic?id=22341&go=comments' class=u>댓글과 토론</a></div></div><div class='topic_row'><div class=votenum>20</div><div class=vote><span id='vote22372'><a class=upvote href='javascript:vote(22372, "up");'><span>▲</span></a></span></div><div class=topictitle><a href='https://github.com/WICG/html-in-canvas' rel='nofollow' id='tr20'><h1>HTML-in-Canvas: HTML 콘텐츠를 직접 Canvas에 렌더링하는 새로운 API 제안</h1></a> <span class=topicurl>(github.com/WICG)</span></div><div class='topicdesc'><a href='topic?id=22372' class='c99 breakall'>- HTML-in-Canvas는 웹에서 `&lt;canvas&gt;` 요소 내에 HTML 요소/콘텐츠를 직접 그릴 수 있는 새로운 표준 API를 제안하는 WICG 프로젝트임
+- 복잡...</a></div><div class='topicinfo'><span id='tp22372'>1</span> point by <a href='/user?id=neo'>GN⁺</a> 7시간전<span id='unvote22372'></span> | <a href='topic?id=22372&go=comments' class=u>댓글 1개</a></div></div><div class='next commentTD'><a href='/?page=2' class=u>토픽 더 불러오기</a></div>
+			</div>
+			</article>
+		</main>
+		<footer>
+			<div>
+				<a href='/guidelines' class=u>사이트 이용법</a>
+				<a href='/faq' class=u>FAQ</a>
+				<a href='/about' class=u>About & ToS</a>
+				<!-- <a href='release' class=u>Releases</a> -->
+				&nbsp; |
+				 <a href='/blog' class=u>Blog</a>
+				 <a href='/lists' class=u>Lists</a>
+				 <a href='/podcast' class=u>Podcast</a>
+				 <a href='https://news.hada.io/rss/news' class=u>RSS</a>
+				&nbsp; |
+				 <a href='/bookmarklet' class=u>Bookmarklet</a>
+				&nbsp; |
+				 <a href='https://x.com/GeekNewsHada' class=u rel="me">X (Twitter)</a>
+				 <a href='https://facebook.com/GeekNewsHada' class=u>Facebook</a>
+				 &nbsp; | &nbsp; 긱뉴스봇 :
+				 <a href='/slackbot' class='u keepall'>Slack</a>
+				 <a href='/jandibot' class='u keepall'>잔디</a>
+				 <a href='/discordbot' class='u keepall'>Discord</a>
+				 <a href='/teamsbot' class='u keepall'>Teams</a>
+				 <a href='/googlechatbot' class='u keepall'>Google Chat</a>
+				 <a href='/switbot' class='u keepall'>Swit</a>
+
+            </div>
+			<div style="width: fit-content; display: inline-block;">
+				<form class="search-cse" action="search" method="GET">
+					<label for="q" class="label">검색</label>
+					<input id="q" name="q" type="text" maxlength=30 class="input" style="width: 200px">
+				</form>
+			</div>
+					</footer>
+	</body>
+</html>
